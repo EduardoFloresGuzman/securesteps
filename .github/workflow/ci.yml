@@ -1,0 +1,44 @@
+name: Build, test and linters
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Cache dependencies and Next.js cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: false
+          eslint_extensions: ts,tsx
+          prettier: true
+
+      - name: Run build
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm run test
