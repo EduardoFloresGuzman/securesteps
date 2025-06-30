@@ -21,7 +21,7 @@ export default function Home() {
               loop
               playsInline
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                videoLoaded ? 'opacity-30' : 'opacity-0'
+                videoLoaded ? "opacity-30" : "opacity-0"
               }`}
               onLoadedData={() => setVideoLoaded(true)}
               onError={() => setVideoError(true)}
