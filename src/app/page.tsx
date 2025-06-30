@@ -18,7 +18,6 @@ export default function Home() {
             <video
               autoPlay
               muted
-              loop
               playsInline
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                 videoLoaded ? "opacity-30" : "opacity-0"
