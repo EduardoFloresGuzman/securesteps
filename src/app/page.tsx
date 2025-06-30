@@ -5,22 +5,31 @@ import Layout from "../components/layout/Layout";
 import MapContainer from "../components/map/MapContainer";
 
 export default function Home() {
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
+  const [videoError, setVideoError] = React.useState(false);
+
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
           {/* Video Background */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {!videoError && (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                videoLoaded ? 'opacity-30' : 'opacity-0'
+              }`}
+              onLoadedData={() => setVideoLoaded(true)}
+              onError={() => setVideoError(true)}
+            >
+              <source src="/hero-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
 
           {/* Video Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/70 to-indigo-900/80"></div>
