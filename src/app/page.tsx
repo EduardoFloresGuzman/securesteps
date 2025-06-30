@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Layout from "../components/layout/Layout";
+import MapContainer from "../components/map/MapContainer";
 
 export default function Home() {
   return (
@@ -69,7 +72,7 @@ export default function Home() {
           </div>
 
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-r from-gray-50 to-white border-b border-gray-200 flex items-center px-6">
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-r from-gray-50 to-white border-b border-gray-200 flex items-center px-6 z-10">
               <div className="flex space-x-2">
                 <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -80,48 +83,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="h-[500px] bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center mt-16">
-              <div className="text-center">
-                <div className="relative mb-8">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl">
-                    <svg
-                      className="w-12 h-12 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                  <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Coming Soon
-                </h3>
-                <p className="text-gray-600 text-lg mb-2">
-                  Interactive map will be loaded here
-                </p>
-                <p className="text-sm text-gray-500">
-                  Google Maps integration in progress
-                </p>
-              </div>
+            <div className="pt-16 h-[500px]">
+              <MapContainer
+                className="h-full"
+                onMapLoad={(map) => {
+                  console.log("Map loaded successfully!", map);
+                }}
+              />
             </div>
           </div>
         </div>
