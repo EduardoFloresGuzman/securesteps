@@ -189,7 +189,7 @@ export default function Privacy() {
               </p>
 
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Children's Privacy
+                Childrens Privacy
               </h2>
               <p className="text-gray-600 mb-6">
                 SecureSteps is designed for general audiences and does not
@@ -204,7 +204,7 @@ export default function Privacy() {
               <p className="text-gray-600 mb-6">
                 We may update this privacy policy from time to time. We will
                 notify users of significant changes by posting the updated
-                policy on this page with a new "last updated" date.
+                policy on this page with a new last updated date.
               </p>
 
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">

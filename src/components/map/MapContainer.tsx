@@ -59,7 +59,7 @@ const MapContainer: React.FC<MapContainerProps> = ({
             Map Temporarily Unavailable
           </h3>
           <p className="text-blue-700 mb-6 text-lg">
-            We're working on getting the interactive crime map back online.
+            Were working on getting the interactive crime map back online.
           </p>
           <p className="text-blue-600 mb-6">
             Please check back in a few minutes to explore crime data in your

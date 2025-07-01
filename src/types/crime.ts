@@ -10,7 +10,7 @@ export interface CrimeIncident {
   dateOccurred: Date;
   dateReported: Date;
   newsArticleUrl?: string;
-  source: DataSource;
+  // source: DataSource;
   verified: boolean;
   createdAt: Date;
   updatedAt: Date;

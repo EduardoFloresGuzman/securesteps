@@ -127,7 +127,7 @@ export default function Terms() {
                 No Warranty
               </h3>
               <p className="text-gray-600 mb-6">
-                SecureSteps is provided "as is" and "as available" without any
+                SecureSteps is provided as is and as available without any
                 representations or warranties, express or implied. We make no
                 representations or warranties in relation to this service or the
                 information and materials provided on this service.

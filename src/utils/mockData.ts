@@ -1,5 +1,5 @@
 import { CrimeIncident } from "../types/crime";
-import { CRIME_TYPES, DATA_SOURCES } from "./constants";
+import { CRIME_TYPES } from "./constants";
 
 /**
  * Generate mock crime data for testing
@@ -7,7 +7,7 @@ import { CRIME_TYPES, DATA_SOURCES } from "./constants";
 export const generateMockCrimeData = (count: number = 50): CrimeIncident[] => {
   const crimes: CrimeIncident[] = [];
   const crimeTypes = Object.keys(CRIME_TYPES);
-  const sources = Object.values(DATA_SOURCES);
+  // const sources = Object.values(DATA_SOURCES);
 
   // Base coordinates for NYC area
   const baseCoords = {
@@ -76,7 +76,9 @@ export const generateMockCrimeData = (count: number = 50): CrimeIncident[] => {
       title: mockTitles[Math.floor(Math.random() * mockTitles.length)],
       description:
         mockDescriptions[Math.floor(Math.random() * mockDescriptions.length)],
-      crimeType: randomCrimeType.toLowerCase().replace("_", " "),
+      crimeType: randomCrimeType
+        .toLowerCase()
+        .replace("_", " ") as CrimeIncident["crimeType"],
       severity: crimeTypeInfo.severity,
       location: {
         type: "Point",
@@ -91,7 +93,7 @@ export const generateMockCrimeData = (count: number = 50): CrimeIncident[] => {
       dateReported,
       newsArticleUrl:
         mockNewsUrls[Math.floor(Math.random() * mockNewsUrls.length)],
-      source: sources[Math.floor(Math.random() * sources.length)],
+      // source: sources[Math.floor(Math.random() * sources.length)],
       verified: Math.random() > 0.2, // 80% verified
       createdAt: dateReported,
       updatedAt: dateReported,

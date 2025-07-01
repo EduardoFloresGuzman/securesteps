@@ -1,8 +1,8 @@
 // API request and response types
-export interface ApiRequest {
+export interface ApiRequest<T = unknown> {
   method: "GET" | "POST" | "PUT" | "DELETE";
   endpoint: string;
-  data?: any;
+  data?: T;
   params?: Record<string, string | number | boolean>;
 }
 
@@ -40,8 +40,10 @@ export interface CrimeSearchParams {
   limit?: number;
 }
 
+import type { CrimeIncident } from "./crime";
+
 export interface CrimeSearchResponse {
-  crimes: any[]; // Will be CrimeIncident from crime.ts
+  crimes: CrimeIncident[];
   total: number;
   bounds: {
     northeast: { lat: number; lng: number };
