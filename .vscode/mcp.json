@@ -6,4 +6,8 @@
       "args": ["-y", "@upstash/context7-mcp"]
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 787c84d8ee403fd8fdf28995c8bb80d3340e8097
