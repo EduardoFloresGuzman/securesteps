@@ -1,0 +1,5 @@
+{
+    "onix.ai.provider": "vertexai",
+    "onix.ai.model": "gemini-2.5-flash",
+    
+}
