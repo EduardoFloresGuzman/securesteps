@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "next",
-=======
   "name": "securestep-1s",
->>>>>>> 787c84d8ee403fd8fdf28995c8bb80d3340e8097
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,22 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.4"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.4",
-    "@eslint/eslintrc": "^3"
-=======
     "@googlemaps/js-api-loader": "^1.16.10",
     "next": "15.3.4",
     "react": "^19.0.0",
@@ -45,6 +25,5 @@
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",
     "typescript": "^5"
->>>>>>> 787c84d8ee403fd8fdf28995c8bb80d3340e8097
   }
 }
