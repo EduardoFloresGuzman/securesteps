@@ -71,3 +71,53 @@ export function overlyComplexDecisionTree(score: number): string {
 
   return "F";
 }
+
+// --- New examples below to demonstrate more extension features ---
+
+export function highCognitiveComplexity(a: number, b: number, c: boolean): string {
+  // Maintainability: High cognitive complexity makes code hard to understand.
+  // SonarQube will flag this function as being too complex.
+  let result = "";
+  if (c) {
+    for (let i = 0; i < a; i++) {
+      if (i % 2 === 0) {
+        for (let j = 0; j < b; j++) {
+          if (j % 2 !== 0) {
+            result += `${i},${j};`;
+          }
+        }
+      } else {
+        result += ".";
+      }
+    }
+  }
+  return result;
+}
+
+export function potentialReDoS(userInput: string): boolean {
+  // Security Hotspot: A complex regex on user input can lead to a
+  // "Regular Expression Denial of Service" (ReDoS) attack.
+  const complexRegex = /^([a-z]+)+$/;
+  return complexRegex.test(userInput);
+}
+
+export function potentialXSS(req: { query: { redirectUrl: string } }, res: { send: (body: string) => void }): void {
+  // Security Vulnerability: Reflecting user input without sanitization.
+  // This is a classic Cross-Site Scripting (XSS) vulnerability.
+  const redirectUrl = req.query.redirectUrl;
+  res.send(`<html><body>Redirecting to ${redirectUrl}...</body></html>`);
+}
+
+interface UserProfile {
+  name: string;
+  address?: {
+    street: string;
+    city: string;
+  };
+}
+
+export function potentialNullDereference(profile: UserProfile): string {
+  // Bug: Accessing a property on a potentially null or undefined object.
+  // This will throw a TypeError if 'profile.address' is not defined.
+  return profile.address.street;
+}
